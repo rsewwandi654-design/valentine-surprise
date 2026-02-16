@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Princess 👑💖</title>
-
+<title>My Secret Letter 💖👑</title>
 <style>
 body{
     margin:0;
@@ -11,23 +10,19 @@ body{
     font-family:'Comic Sans MS', cursive;
     background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe4e1);
     color:#d63384;
-    padding:100px 20px;
+    padding:50px 20px;
 }
-
 h1{
     font-size:35px;
 }
-
 .crown{
     font-size:50px;
     animation: glow 1.5s infinite alternate;
 }
-
 @keyframes glow{
     from{ text-shadow:0 0 10px gold; }
     to{ text-shadow:0 0 25px gold; }
 }
-
 .heart{
     position:fixed;
     top:-10px;
@@ -39,6 +34,28 @@ h1{
         opacity:0;
     }
 }
+.secret-letter{
+    background: rgba(255, 255, 255, 0.8);
+    color:#d63384;
+    padding:20px;
+    margin:30px auto;
+    width:80%;
+    border-radius:20px;
+    font-size:20px;
+    line-height:1.6;
+    display:none; /* hidden initially */
+    box-shadow:0 0 20px rgba(255, 105, 180, 0.5);
+}
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:#ff69b4;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
 </style>
 </head>
 
@@ -46,26 +63,25 @@ h1{
 
 <div class="crown">👑</div>
 
-<h1>My Handsome Prince 💖</h1>
+<h1>My Beautiful Princess 💖</h1>
 
-<p>
-You are my world, my hero, my everything. <br><br>
+<button onclick="revealLetter()">Open My Secret Letter 💌</button>
 
-In my darkness, you are the light. ✨ <br>
-In my tears, you are the smile. 😊 <br><br>
-
-Every single day, I live in a beautiful world because of you. <br>
-With you, even ordinary days feel magical. 💗 <br><br>
-
-I promise I will fight every problem in my life, <br>
-face every storm, <br>
-and win every battle, <br>
-just to win you and protect our love forever. 💞 <br><br>
-
-No matter what happens, my heart will always choose you. ❤️
-</p>
+<div class="secret-letter" id="letter">
+    You are my world, my hero, my everything.<br><br>
+    In my darkness, you are the light. ✨<br>
+    In my tears, you are the smile. 😊<br><br>
+    Every single day, I live in a beautiful world because of you.<br>
+    With you, even ordinary days feel magical. 💗<br><br>
+    I promise I will fight every problem in my life,<br>
+    face every storm,<br>
+    and win every battle,<br>
+    just to win you and protect our love forever. 💞<br><br>
+    No matter what happens, my heart will always choose you. ❤️
+</div>
 
 <script>
+/* Heart Rain */
 function createHeart(){
     var heart = document.createElement("div");
     heart.classList.add("heart");
@@ -73,13 +89,17 @@ function createHeart(){
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = Math.random() * 20 + 15 + "px";
     document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
+    setTimeout(() => { heart.remove(); }, 5000);
 }
 setInterval(createHeart, 300);
+
+/* Reveal secret letter */
+function revealLetter(){
+    document.getElementById("letter").style.display = "block";
+}
 </script>
 
 </body>
 </html>
+
+
