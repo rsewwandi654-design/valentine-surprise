@@ -34,7 +34,7 @@ h1{
         opacity:0;
     }
 }
-.secret-letter{
+.letter-box{
     background: rgba(255, 255, 255, 0.8);
     color:#d63384;
     padding:20px;
@@ -43,8 +43,8 @@ h1{
     border-radius:20px;
     font-size:20px;
     line-height:1.6;
-    display:none; /* hidden initially */
     box-shadow:0 0 20px rgba(255, 105, 180, 0.5);
+    display:none; /* hide initially */
 }
 button{
     padding:12px 25px;
@@ -62,23 +62,11 @@ button{
 <body>
 
 <div class="crown">👑</div>
+<h1>My Handsome Prince 💖</h1>
 
-<h1>My Beautiful Princess 💖</h1>
+<button id="showBtn">Open My Secret Letter 💌</button>
 
-<button onclick="revealLetter()">Open My Secret Letter 💌</button>
-
-<div class="secret-letter" id="letter">
-    You are my world, my hero, my everything.<br><br>
-    In my darkness, you are the light. ✨<br>
-    In my tears, you are the smile. 😊<br><br>
-    Every single day, I live in a beautiful world because of you.<br>
-    With you, even ordinary days feel magical. 💗<br><br>
-    I promise I will fight every problem in my life,<br>
-    face every storm,<br>
-    and win every battle,<br>
-    just to win you and protect our love forever. 💞<br><br>
-    No matter what happens, my heart will always choose you. ❤️
-</div>
+<div class="letter-box" id="letter"></div>
 
 <script>
 /* Heart Rain */
@@ -93,13 +81,44 @@ function createHeart(){
 }
 setInterval(createHeart, 300);
 
-/* Reveal secret letter */
-function revealLetter(){
-    document.getElementById("letter").style.display = "block";
+/* Typing Effect for Secret Letter */
+var message = `You are my world, my hero, my everything.
+
+In my darkness, you are the light. ✨
+In my tears, you are the smile. 😊
+
+Every single day, I live in a beautiful world because of you.
+With you, even ordinary days feel magical. 💗
+
+I promise I will fight every problem in my life,
+face every storm,
+and win every battle,
+just to win you and protect our love forever. 💞
+
+No matter what happens, my heart will always choose you. ❤️`;
+
+var i = 0;
+var letterDiv = document.getElementById("letter");
+
+document.getElementById("showBtn").addEventListener("click", function(){
+    letterDiv.style.display = "block";
+    document.getElementById("showBtn").style.display = "none";
+    typeWriter();
+});
+
+function typeWriter(){
+    if(i < message.length){
+        letterDiv.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50); // 50ms per character
+    }
 }
 </script>
 
 </body>
 </html>
+
+
+
 
 
