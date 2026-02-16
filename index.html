@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Love 💖</title>
+    <style>
+        body{
+            text-align:center;
+            font-family: Arial;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            padding-top:100px;
+        }
+        input, button{
+            padding:10px;
+            font-size:16px;
+            border-radius:10px;
+            border:none;
+        }
+        button{
+            background:#ff4d6d;
+            color:white;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Enter the Secret Password 💌</h2>
+
+<input type="password" id="pass" placeholder="Enter password">
+<br><br>
+<button onclick="checkPassword()">Unlock</button>
+
+<script>
+function checkPassword(){
+    var password = document.getElementById("pass").value;
+    if(password === "1010"){
+        window.location.href = "q1.html";
+    }else{
+        alert("Wrong password 😜 Try again!");
+    }
+}
+</script>
+
+</body>
+</html>
