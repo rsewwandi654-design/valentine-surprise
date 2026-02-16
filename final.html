@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Princess 👑💖</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    text-align:center;
+    font-family:'Comic Sans MS', cursive;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe4e1);
+    color:#d63384;
+    padding:100px 20px;
+}
+
+h1{
+    font-size:35px;
+}
+
+.crown{
+    font-size:50px;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px gold; }
+    to{ text-shadow:0 0 25px gold; }
+}
+
+.heart{
+    position:fixed;
+    top:-10px;
+    animation: fall 5s linear infinite;
+}
+@keyframes fall{
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="crown">👑</div>
+
+<h1>My Handsome Prince 💖</h1>
+
+<p>
+You are my world, my hero, my everything. <br><br>
+
+In my darkness, you are the light. ✨ <br>
+In my tears, you are the smile. 😊 <br><br>
+
+Every single day, I live in a beautiful world because of you. <br>
+With you, even ordinary days feel magical. 💗 <br><br>
+
+I promise I will fight every problem in my life, <br>
+face every storm, <br>
+and win every battle, <br>
+just to win you and protect our love forever. 💞 <br><br>
+
+No matter what happens, my heart will always choose you. ❤️
+</p>
+
+<script>
+function createHeart(){
+    var heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
